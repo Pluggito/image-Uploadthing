@@ -5,16 +5,7 @@ require("dotenv").config();
 const port = process.env.PORT || 3050;
 const app = express();
 
-app.use(
-  cors({
-    origin: (origin, callback) => {
-      // Allow requests with no origin (mobile apps, Postman, etc.)
-      if (!origin) return callback(null, true);
-      return callback(null, origin);
-    },
-    credentials: true,
-  })
-);
+app.use(cors());
 app.use(express.json()); // body parser
 
 // UploadThing setup
