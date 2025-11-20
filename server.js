@@ -2,10 +2,15 @@ const express = require("express");
 const cors = require("cors");
 const { createUploadthing, createRouteHandler } = require("uploadthing/express");
 require("dotenv").config();
-const port = process.env.PORT || 3050;
+const port = process.env.PORT || 5070;
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: [
+     "https://hatsoff-wears.vercel.app",
+    "http://localhost:5173"
+  ]
+}));
 app.use(express.json()); // body parser
 
 // UploadThing setup
