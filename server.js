@@ -8,7 +8,9 @@ const app = express();
 app.use(cors({
   origin: [
      "https://hatsoff-wears.vercel.app",
-    "http://localhost:5173"
+    "http://localhost:5173",
+    "https://www.hatoffwears.com",
+    "https://hatoffwears.com"
   ]
 }));
 app.use(express.json()); // body parser
